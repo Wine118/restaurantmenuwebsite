@@ -1,0 +1,496 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Than Lwin Cafe</title>
+
+  <!-- Link to your stylesheet -->
+   <link rel="icon" type="image/png" href="images/logo.png"/>
+  <link rel="stylesheet" href="CSS/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Myanmar:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <header>
+    <div class="logo-text">
+        <img src="images/logo.png" alt="Than Lwin Cafe Logo" class="logo-img">
+        THAN LWIN Cafe
+    </div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="order.html">About</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+ 
+  <main>
+    <!-- Tea and Snack -->
+    <section class="category-menu">
+      <h2>Tea & Snack</h2>
+
+      <div class="items-row">
+        <div class="item-card">
+          <img src="images/menu/tea&snack/tea.jpg" alt="Regular Milk Tea" class="item-image">
+          <h3>Regular Tea(ပုံမှန်)</h3>
+          <p>1000 MMK</p>
+          <button onclick="addItem('Regular Milk Tea', 1000)">Add</button>
+        </div>
+
+        <div class="item-card">
+          <img src="images/menu/tea&snack/tea.jpg" alt="Bitter Milk Tea" class="item-image">
+          <h3>Bitter Tea(ကျဆိမ့်)</h3>
+          <p>1000 MMK</p>
+          <button onclick="addItem('Bitter Milk Tea', 1000)">Add</button>
+        </div>
+
+        <div class="item-card">
+          <img src="images/menu/tea&snack/tea.jpg" alt="Sweeten Milk Tea" class="item-image">
+          <h3>Sweeten Tea(ချိုဆိမ့်)</h3>
+          <p>1000 MMK</p>
+          <button onclick="addItem('Sweeten Milk Tea', 1000)">Add</button>
+        </div>
+
+        <div class="item-card">
+          <img src="images/menu/tea&snack/samosa.jpg" alt="Samosa" class="item-image">
+          <h3>Samosa(စမူဆာ)</h3>
+          <p>500 MMK</p>
+          <button onclick="addItem('Samosa', 500)">Add</button>
+        </div>
+
+        <div class="item-card">
+          <img src="images/menu/tea&snack/nanpyar.jpg" alt="Nann " class="item-image">
+          <h3>Nann(နံပြား)</h3>
+          <p>700 MMK</p>
+          <button onclick="openMohingaOptions('Nanpyar', 700)">Add</button>
+        </div>
+
+        <div class="item-card">
+          <img src="images/menu/tea&snack/nanpyar.jpg" alt="Buttered Nann " class="item-image">
+          <h3>Buttered Nann (နံပြားထောပတ်သုပ်)</h3>
+          <p>1000 MMK</p>
+          <button onclick="addItem('Buttered Nanpyar', 1000)">Add</button>
+        </div>
+
+        <div class="item-card">
+          <img src="images/menu/tea&snack/parata.jpg" alt="Parata" class="item-image">
+          <h3>Parata(ပလာတာ)</h3>
+          <p>1000 MMK</p>
+          <button onclick="openMohingaOptions('Parata', 1000)">Add</button>
+        </div>
+
+        <div class="item-card">
+          <img src="images/menu/tea&snack/ikyarkwayjpg.jpg" alt="Youtiao" class="item-image">
+          <h3>Youtiao(အီကြာကွေး)</h3>
+          <p>1000 MMK</p>
+          <button onclick="openMohingaOptions('Youtiao', 1000)">Add</button>
+        </div>
+
+        <div class="item-card">
+          <img src="images/menu/tea&snack/puri.jpg" alt="Puri" class="item-image">
+          <h3>Puri(ပူရီ)</h3>
+          <p>3000 MMK</p>
+          <button onclick="addItem('Puri', 1000)">Add</button>
+        </div>
+
+        <div class="item-card">
+          <img src="images/menu/tea&snack/goatkeema.jpg" alt="Keema" class="item-image">
+          <h3>Keema Parata(ကီးမား)</h3>
+          <p>6000 MMK</p>
+          <button onclick="openMohingaOptions('Keema', 6000)">Add</button>
+        </div>
+
+                
+      </div>
+    </section>
+
+    <!-- Mohinga & Noodle -->
+    <section class="category-menu">
+      <h2>Mohinga & Noodle</h2>
+
+      <div class="items-row">
+        <div class="item-card">
+          <img src="images/menu/monhinga&noodles/mohinga.jpg" alt="Mohinga" class="item-image">
+          <h3>မုန့်ဟင်းခါး(Mohinga) plain</h3>
+          <p>1500 MMK</p>
+          <button onclick="openMohingaOptions('Mohinga',1500)">Add</button>
+        </div>
+
+        <div class="item-card">
+          <img src="images/menu/monhinga&noodles/ohmnokaukswe.jpg" alt="Ohn Noh Kauk Swe" class="item-image">
+          <h3>အုန်းနို့ခေါက်ဆွဲ(Ohn Noh Kauk Swe)</h3>
+          <p>1500 MMK</p>
+          <button onclick="openMohingaOptions('Ohn Noh Kauk Swe',1500)">Add</button>
+        </div>
+
+        <div class="item-card">
+          <img src="images/menu/monhinga&noodles/monteethoke.jpg" alt="Mont Tee Thoke" class="item-image">
+          <h3>မုန့်တီသုပ်</h3>
+          <p>1500 MMK</p>
+          <button onclick="openMohingaOptions('Mont Tee Thoke',1500)">Add</button>
+        </div>
+
+        <div class="item-card">
+          <img src="images/menu/monhinga&noodles/katkyaykite.jpg" alt="Kat Kyay Kite" class="item-image">
+          <h3>Kat Kyay Kite(ကတ်ကြေးကိုက်)</h3>
+          <p>6000 MMK</p>
+          <button onclick="openMohingaOptions('Kat Kyay Kite',6000)">Add</button>
+        </div>
+
+        <div class="item-card">
+          <img src="images/menu/monhinga&noodles/dumpling.jpg" alt="Dumpling" class="item-image">
+          <h3>Dumpling (ဖက်ထုပ်)</h3>
+          <p>3000 MMK</p>
+          <button onclick="openMohingaOptions('Dumpling', 3000)">Add</button>
+        </div>
+
+        <div class="item-card">
+          <img src="images/menu/monhinga&noodles/satae.jpg" alt="Satae" class="item-image">
+          <h3>Satae (ဆာတေး)</h3>
+          <p>3000 MMK</p>
+          <button onclick="addItem('Satae', 3000)">Add</button>
+        </div>
+
+        <div class="item-card">
+          <img src="images/menu/monhinga&noodles/shan.jpg" alt="Shan" class="item-image">
+          <h3>Shan (ရှမ်းခေါက်ဆွဲ)</h3>
+          <p>3000 MMK</p>
+          <button onclick="openMohingaOptions('Shan', 3000)">Add</button>
+        </div>
+
+        <div class="item-card">
+          <img src="images/menu/monhinga&noodles/tofunway.jpg" alt="Warm Tofu" class="item-image">
+          <h3>Tofu Nway (တို့ဟူးနွေး)</h3>
+          <p>3000 MMK</p>
+          <button onclick="openMohingaOptions('Tofu Nway', 3000)">Add</button>
+        </div>
+
+        <div class="item-card">
+          <img src="images/menu/monhinga&noodles/meeshay.jpg" alt="Mee Shay" class="item-image">
+          <h3>Mee Shay (မြီးရှည်)</h3>
+          <p>3000 MMK</p>
+          <button onclick="openMohingaOptions('Mee Shay', 3000)">Add</button>
+        </div>
+
+        <div class="item-card">
+          <img src="images/menu/monhinga&noodles/MayOhMeeShay.jpg" alt="Myay Oh Mee Shay" class="item-image">
+          <h3>Myay Oh Mee Shay (မြေအိုးမြီးရှည်)</h3>
+          <p>3000 MMK</p>
+          <button onclick="openMohingaOptions('Myay Oh Mee Shay', 3000)">Add</button>
+        </div>    
+
+        
+
+        
+    </section>
+
+    <!-- Rice and Fried Rice -->
+    <section class="category-menu">
+      <h2>Rice and Fried Rice</h2>
+
+      <div class="items-row">
+        <div class="item-card">
+          <img src="images/menu/rice&friedrice/plainrice.jpg" alt="Plane Rice" class="item-image">
+          <h3>Plain Rice(ထမင်းဖြူ)</h3>
+          <p>1000 MMK</p>
+          <button onclick="addItem('Plain Rice', 1000)">Add</button>
+        </div>
+
+        <div class="item-card">
+          <img src="images/menu/rice&friedrice/oilscatteredrice.jpg" alt="Oil tossed rice" class="item-image">
+          <h3>Oil Tossed Rice(ထမင်းဆီဆမ်း)</h3>
+          <p>1500 MMK</p>
+          <button onclick="addItem('Oil tossed rice', 1500)">Add</button>
+        </div>
+
+        <div class="item-card">
+          <img src="images/menu/rice&friedrice/friedegg.jpg" alt="Fried Egg" class="item-image">
+          <h3>Fried Egg(ကြက်ဥဟက်ဘွိုင်ကြော်)</h3>
+          <p>1000 MMK</p>
+          <button onclick="addItem('Fried Egg', 1000)">Add</button>
+        </div>
+
+        <div class="item-card">
+          <img src="images/menu/rice&friedrice/omelette.jpg" alt="Omelette" class="item-image">
+          <h3>Omelette(ကြက်ဥမွှေကြော်)</h3>
+          <p>1500 MMK</p>
+          <button onclick="addItem('Omelette', 1500)">Add</button>
+        </div>
+
+
+        <div class="item-card">
+          <img src="images/menu/rice&friedrice/htaminthoke.jpg" alt="Mixed Rice" class="item-image">
+          <h3>Mixed Rice(ထမင်းသုပ်)</h3>
+          <p>3000 MMK</p>
+          <button onclick="addItem('Mixed', 3000)">Add</button>
+        </div>
+
+        <div class="item-card">
+          <img src="images/menu/rice&friedrice/americankyaw.jpg" alt="American Fried Rice" class="item-image">
+          <h3>American Fried Rice(အမေရိကန်ထမင်းကြော်)</h3>
+          <p>4000 MMK</p>
+          <button onclick="addItem('American Fried Rice', 4000)">Add</button>
+        </div>
+
+        <div class="item-card">
+          <img src="images/menu/rice&friedrice/pashukyaw.jpg" alt="Pashu Fried Rice" class="item-image">
+          <h3>Pashu Fried Rice</h3>
+          <p>4000 MMK</p>
+          <button onclick="addItem('Pashu Fried Rice', 4000)">Add</button>
+        </div>
+
+        <div class="item-card">
+          <img src="images/menu/rice&friedrice/tomyamkyaw.jpg" alt="Tom Yum Fried Rice" class="item-image">
+          <h3>Tom Yum Fried Rice(တုံယမ်းထမင်းကြော်)</h3>
+          <p>4000 MMK</p>
+          <button onclick="addItem('Tom Yum Fried Rice', 4000)">Add</button>
+        </div>
+
+        <div class="item-card">
+          <img src="images/menu/rice&friedrice/kongbongrice.jpg" alt="Kong Bong and Rice" class="item-image">
+          <h3>Kong Bong and Rice(ကုန်းဘောင်နှင့်ထမင်း)</h3>
+          <p>7000 MMK</p>
+          <button onclick="addItem('Kong Bong and Rice', 7000)">Add</button>
+        </div>
+
+        <div class="item-card">
+          <img src="images/menu/rice&friedrice/sweetandsourrice.jpg" alt="Sweetsour and Rice" class="item-image">
+          <h3>Sweesour and Rice(ချိုချဉ်နှင့်ထမင်း)</h3>
+          <p>7000 MMK</p>
+          <button onclick="addItem('Sweetsour and Rice', 7000)">Add</button>
+        </div>
+
+        <div class="item-card">
+          <img src="images/menu/rice&friedrice/sourandhot.jpg" alt="Sourhot and rice" class="item-image">
+          <h3>Sourhot and rice(ချဉ်စပ်နှင့်ထမင်း)</h3>
+          <p>7000 MMK</p>
+          <button onclick="addItem('Sourhot and rice', 7000)">Add</button>
+        </div>
+
+        <div class="item-card">
+          <img src="images/menu/rice&friedrice/yangonpoung.jpg" alt="Yangon Steamed Rice" class="item-image">
+          <h3>Yangon Steamed Rice(ရန်ကုန်ထမင်းပေါင်း)</h3>
+          <p>7000 MMK</p>
+          <button onclick="addItem('Yangon Steamed Rice', 7000)">Add</button>
+        </div>
+
+        <div class="item-card">
+          <img src="images/menu/rice&friedrice/mandalaypoung.jpg" alt="Mandalay Steamed Rice" class="item-image">
+          <h3>Mandalay Steamed Rice(မန္တလေးထမင်းပေါင်း)</h3>
+          <p>7000 MMK</p>
+          <button onclick="addItem('Mandalay Steamed Rice', 7000)">Add</button>
+        </div>
+
+
+        
+
+              
+      </div>
+    </section>
+
+    <!-- Soup and Fried Vegetable -->
+    <section class="category-menu">
+      <h2>Soup and Fried Vegetable</h2>
+
+      <div class="items-row">
+        <div class="item-card">
+          <img src="images/menu/soup&friedveggie/tomyam.jpg" alt="Tom Yum Soup" class="item-image">
+          <h3>Tom Yum Soup(တုံယမ်း)</h3>
+          <p>7000 MMK</p>
+          <button onclick="openMohingaOptions('Tom Yum Soup', 7000)">Add</button>
+        </div>
+
+        <div class="item-card">
+          <img src="images/menu/soup&friedveggie/fishheadsoup.jpg" alt="Fish Head Soup" class="item-image">
+          <h3>Fish Head Soup(ငါးခေါင်းဟင်းရည်)</h3>
+          <p>7000 MMK</p>
+          <button onclick="addItem('Fish Head Soup', 7000)">Add</button>
+        </div>
+
+        <div class="item-card">
+          <img src="images/menu/soup&friedveggie/assortedsoup.jpg" alt="Assorted Soup" class="item-image">
+          <h3>Assorted Soup(၁၂မျိုးဟင်းရည်)</h3>
+          <p>7000 MMK</p>
+          <button onclick="addItem('Assorted Soup', 7000)">Add</button>
+        </div>
+
+        <div class="item-card">
+          <img src="images/menu/soup&friedveggie/kasoon.jpg" alt="Fried Water Spinach" class="item-image">
+          <h3>Fried Water Spinach(ကန်စွန်းရွက်ကြော်)</h3>
+          <p>3000 MMK</p>
+          <button onclick="addItem('Fried Water Spinach', 3000)">Add</button>
+        </div>
+
+        <div class="item-card">
+          <img src="images/menu/soup&friedveggie/kailan.jpg" alt="Fried Kai Lan" class="item-image">
+          <h3>Fried Kai Lan(ကိုက်လန်ကြော်)</h3>
+          <p>3000 MMK</p>
+          <button onclick="addItem('Fried Kai Lan', 3000)">Add</button>
+        </div>
+
+        <div class="item-card">
+          <img src="images/menu/soup&friedveggie/paethee.jpg" alt="Fried French Bean" class="item-image">
+          <h3>Fried French Bean(ပဲသီးကြော်)</h3>
+          <p>3000 MMK</p>
+          <button onclick="addItem('Fried French Bean', 3000)">Add</button>
+        </div>
+
+        <div class="item-card">
+          <img src="images/menu/soup&friedveggie/aseinkyaw.jpg" alt="Fried Vegetables" class="item-image">
+          <h3>Fried Vegetables(အစိမ်းကြော်)</h3>
+          <p>3000 MMK</p>
+          <button onclick="addItem('Fried Vegetables', 3000)">Add</button>
+        </div>
+
+       
+      </div>
+    </section>
+
+    <!-- ===========TO ORDER SECTION ===== -->
+    <section id="to-order">
+      <h2>Items to Order</h2>
+      <div class="order-row-header">
+
+          <div class="order-name-header">
+            Name of Dish
+          </div>
+
+          <div class="order-qty-header">
+            <h3>Qty</h3>
+          </div>
+
+          <div class="order-price-header">
+            Price
+          </div>
+
+          <div class="order-price-total-header">
+            Total
+          </div>
+
+          
+
+      </div>
+
+      <div id="order-list">        
+
+        <div class="order-row">
+
+          <div class="order-name">
+            Mohinga(Medium)
+          </div>
+
+          <div class="order-qty">
+            <input type="number" value="1" min="1">
+          </div>
+
+          <div class="order-price">
+            1500 MMK
+          </div>
+
+          <div class="order-price-total">
+            1500 MMK
+          </div>
+
+          <button class="remove-btn">x</button>
+
+        </div>
+
+        <div class="order-row">
+
+          <div class="order-name">
+            Ohn Noh Kauk Swe(Large)
+          </div>
+
+          <div class="order-qty">
+            <input type="number" value="1" min="1">
+          </div>
+
+          <div class="order-price">
+            1500 MMK
+          </div>
+
+          <div class="order-price-total">
+            1500 MMK
+          </div>
+
+          <button class="remove-btn">x</button>
+
+        </div>     
+
+        
+
+        
+      </div>
+
+      <div id="empty-message" class="empty-order-message">
+          Nothing is ordered yet.
+      </div>     
+
+      <div class="total-section">
+        <strong>Total: </strong>
+        <span id="total-amount">0 MMK</span>
+      </div>
+
+      <div class="order-btnbox">
+         <a href="order.html" class="order-btn">Order Now</a>
+      </div>
+
+     
+
+    </section>
+    
+    
+  </main>
+
+  <footer>
+        <span>@2025 Created by Maddyson.</span>
+  </footer>
+
+
+<!-- Mohinga Topping Model -->
+  <div id="mohingaModal" class="modal">
+      <div class="model-content">
+        <h2>Choose Toppings</h2>
+        <div class="toppingbox">
+            <div class="topping-option">
+               <div>Fritter</div>
+               <div class="chk-wrapper">
+                  <input type="checkbox" value="300" class="mohinga-topping"> 
+                </div>              
+            </div>
+
+            <div class="topping-option">
+               <div>Fish Cake</div>
+               <div class="chk-wrapper">
+                  <input type="checkbox" value="500" class="mohinga-topping"> 
+                </div>              
+            </div>
+
+            <div class="topping-option">
+               <div>Oh Bae Ou(soup boiled egg)</div>
+               <div class="chk-wrapper">
+                  <input type="checkbox" value="1000" class="mohinga-topping"> 
+                </div>              
+            </div>
+
+            
+            
+        </div>
+        
+
+        <div class="modal-buttons">
+          <button onclick="addMohinga()">Add to Order</button>
+          <button onclick="closeMohingaOptions()">Cancel</button>
+        </div>
+      </div>
+  </div>
+
+  
+
+
+  <!-- Link to your JavaScript (defer ensures it runs after HTML is parsed) -->
+  <script defer src="Javascript/menu.js"></script>
+
+</body>
+</html>

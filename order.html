@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Than Lwin Cafe</title>
+
+  <!-- Link to your stylesheet -->
+   <link rel="icon" type="image/png" href="images/logo.png"/>
+  <link rel="stylesheet" href="CSS/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Myanmar:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <header>
+    <div class="logo-text">
+        <img src="images/logo.png" alt="Than Lwin Cafe Logo" class="logo-img">
+        THAN LWIN Cafe
+    </div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="order.html">About</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+ 
+  <main>
+    <!-- Tea and Snack -->
+    
+
+    <!-- ===========TO ORDER SECTION ===== -->
+    <section id="order-to-order">
+      <h2>Items to Order</h2>
+      <div class="order-order-row-header">
+
+          <div class="order-order-name-header">
+            Name of Dish
+          </div>
+
+          <div class="order-order-qty-header">
+            <h3>Qty</h3>
+          </div>
+
+          <div class="order-order-price-header">
+            Price
+          </div>
+
+          <div class="order-order-price-total-header">
+            Total
+          </div>
+
+          
+
+      </div>
+
+      <div id="order-order-list">        
+
+        <div class="order-order-row">
+
+          <div class="order-order-name">
+            Mohinga(Medium)
+          </div>
+
+          <div class="order-order-qty">
+            <input type="number" value="1" min="1">
+          </div>
+
+          <div class="order-order-price">
+            1500 MMK
+          </div>
+
+          <div class="order-order-price-total">
+            1500 MMK
+          </div>
+
+          <button class="order-remove-btn">x</button>
+
+        </div>
+
+           
+
+        
+
+        
+      </div>
+      <div class="delivery-or-takeout">
+        <strong>Delivery Or Takeout: </strong>
+        <span id="deliveryornot">0 MMK</span>
+      </div>
+
+      <div id="order-empty-message" class="order-empty-order-message">
+          Nothing is ordered yet.
+      </div>     
+
+      <div class="order-total-section">
+        <strong>Total: </strong>
+        <span id="order-total-amount">0 MMK</span>
+      </div>
+
+      <div class="order-order-btnbox">
+         <a href="order.html" class="order-btn">Order Now</a>
+      </div>
+
+     
+
+    </section>
+    
+    
+  </main>
+
+  <footer>
+        <span>@2025 Created by Maddyson.</span>
+  </footer>
+
+
+
+
+
+  <!-- Link to your JavaScript (defer ensures it runs after HTML is parsed) -->
+  <script defer src="Javascript/menu.js"></script>
+
+</body>
+</html>

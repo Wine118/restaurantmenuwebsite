@@ -64,8 +64,11 @@
         font-size: 16px;
     }
 
+    
+
 }
 
+/* Mobile view */
 @media (max-width: 600px) {
     /* HEADER */
 
@@ -169,4 +172,8 @@
     .contact-phone {
         font-size: 14px;
     }
+
+    
+    
+
 }
