@@ -8,6 +8,7 @@
   <!-- Link to your stylesheet -->
    <link rel="icon" type="image/png" href="images/logo.png"/>
   <link rel="stylesheet" href="CSS/style.css" />
+  <link rel="stylesheet" href="CSS/order.css" />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Myanmar:wght@400;700&display=swap" rel="stylesheet">
 
 </head>
@@ -25,87 +26,82 @@
     </nav>
   </header>
  
-  <main>
-    <!-- Tea and Snack -->
-    
+  <main> 
+    <!-- ===========TO ORDER SECTION ===== --> 
+   <section id="to-order">
+    <h2>Items to Order</h2>
 
-    <!-- ===========TO ORDER SECTION ===== -->
-    <section id="order-to-order">
-      <h2>Items to Order</h2>
-      <div class="order-order-row-header">
+    <div class="order-row-header">
+      <div class="order-name">Name of Dish</div>
+      <div class="order-qty">Qty</div>
+      <div class="order-price">Price</div>
+      <div class="order-price-total">Total</div>
+    </div>
 
-          <div class="order-order-name-header">
-            Name of Dish
+  <div id="order-list">
+      <div class="order-row">
+          <div class="order-name">Mohinga(Medium)</div>
+          <div class="order-qty">
+              <input type="number" value="1" min="1">
           </div>
-
-          <div class="order-order-qty-header">
-            <h3>Qty</h3>
-          </div>
-
-          <div class="order-order-price-header">
-            Price
-          </div>
-
-          <div class="order-order-price-total-header">
-            Total
-          </div>
-
-          
-
+          <div class="order-price">1500 MMK</div>
+          <div class="order-price-total">1500 MMK</div>
+          <button class="remove-btn">x</button>
       </div>
 
-      <div id="order-order-list">        
-
-        <div class="order-order-row">
-
-          <div class="order-order-name">
-            Mohinga(Medium)
+      <div class="order-row">
+          <div class="order-name">Ohm Nok Kauk Swe</div>
+          <div class="order-qty">
+              <input type="number" value="1" min="1">
           </div>
+          <div class="order-price">1500 MMK</div>
+          <div class="order-price-total">0 MMK</div>
+          <button class="remove-btn">x</button>
+      </div>
+  </div> 
 
-          <div class="order-order-qty">
-            <input type="number" value="1" min="1">
-          </div>
 
-          <div class="order-order-price">
-            1500 MMK
-          </div>
+  <div class="order-empty-message">
+      Nothing is ordered yet.
+    </div>
 
-          <div class="order-order-price-total">
-            1500 MMK
-          </div>
-
-          <button class="order-remove-btn">x</button>
-
+    <div class="delivery-or-takeout">
+    
+        <div class="delivery-left">
+            <strong>Delivery or Takeout:</strong>
+            <label><input type="radio" name="deliverytype" value="delivery"> Delivery (+1000 MMK)</label>
+            <label><input type="radio" name="deliverytype" value="takeout"> Takeout (0 MMK)</label>
         </div>
-
-           
-
         
+        <div></div>
+        <div class="delivery-right">
+            <span id="deliveryornot">0 MMK</span>
+        </div>
+        <div></div>
 
-        
+  </div>
+
+    <div class="total-section">
+      <strong>Total: </strong><span id="order-total-amount">1500 MMK</span>
+    </div>
+
+    <div class="order-btnbox">
+      <button id="openAmountModal" class="order-btn">Order Now</button>
+    </div>
+   </section> 
+
+   <!-- Modal for entering amount -->
+    <div id="amountModal" class="modal">
+      <div class="modal-content">
+        <h3>Enter Amount to Pay</h3>
+        <input type="number" id="amountInput" placeholder="Enter amount..." min="0">
+        <div class="modal-buttons">
+          <button id="confirmAmount" class="confirm-btn">Confirm</button>
+          <button id="closeAmountModal" class="cancel-btn">Cancel</button>
+        </div>
       </div>
-      <div class="delivery-or-takeout">
-        <strong>Delivery Or Takeout: </strong>
-        <span id="deliveryornot">0 MMK</span>
-      </div>
 
-      <div id="order-empty-message" class="order-empty-order-message">
-          Nothing is ordered yet.
-      </div>     
-
-      <div class="order-total-section">
-        <strong>Total: </strong>
-        <span id="order-total-amount">0 MMK</span>
-      </div>
-
-      <div class="order-order-btnbox">
-         <a href="order.html" class="order-btn">Order Now</a>
-      </div>
-
-     
-
-    </section>
-    
+    </div>
     
   </main>
 
@@ -118,7 +114,7 @@
 
 
   <!-- Link to your JavaScript (defer ensures it runs after HTML is parsed) -->
-  <script defer src="Javascript/menu.js"></script>
+  <script defer src="Javascript/order.js"></script>
 
 </body>
 </html>
