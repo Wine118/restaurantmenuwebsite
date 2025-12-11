@@ -41,7 +41,7 @@
 }
 
 .order-row{
-    display: none;
+    display: grid;
     grid-template-columns: 5fr 1fr 2fr 2fr 40px; /* all equal */
     align-items: center;
     gap: 10px;
@@ -81,7 +81,7 @@ font-size: 16px;
 /* Delivery or Takeout section */
 .delivery-or-takeout {
     display: grid;
-    grid-template-columns: 7fr 1fr 2fr 40px; /* left area expands, right area aligns like totals */
+    grid-template-columns: 8fr 3fr; /* left area expands, right area aligns like totals */
     align-items: start;
     margin-top: 20px;
     gap: 10px;
@@ -113,13 +113,14 @@ font-size: 16px;
 .delivery-right {
     text-align: left;
     padding-right: 0px; /* same alignment as total row */
+    padding-left: 35px;
     font-size: 18px;
     font-weight: bold;
     color: #013E3F;
 }
 
 .order-empty-message{
-    display: block;
+    display: none;
     text-align: center;
     width: 100%;
     justify-content: center;
@@ -132,7 +133,7 @@ font-size: 16px;
 
 .total-section {
     display: grid;
-    grid-template-columns: 8fr 2fr 40px; /* all equal */
+    grid-template-columns: 8fr 3fr; /* all equal */
     align-items: center;
     gap: 10px;
     padding: 10px 0;
@@ -143,6 +144,12 @@ font-size: 16px;
     color: #013E3F;
     font-size: 20px;
     font-weight: bold;
+}
+
+#order-total-amount {
+    text-align: left;
+    padding-right: 0px; /* align with delivery/takeout right side */
+    padding-left: 35px;
 }
 
 .order-btnbox{
@@ -200,6 +207,21 @@ font-size: 16px;
     font-size: 18px;
     margin-bottom: 15px;
     border-radius: 8px;
+}
+
+.modal-content textarea {
+    font-size: 15px;          /* smaller text */
+    width: 100%;               /* same width as input */
+    height: 80px;             /* bigger box */
+    padding: 6px;             /* padding from top-left */
+    text-align: left;         /* left-align text */
+    vertical-align: top;      /* top-align text */
+    line-height: 1.4;         /* comfortable spacing */
+    resize: vertical;         /* user can resize vertically */
+    overflow-wrap: break-word; /* wrap long lines */
+    border-radius: 8px;
+    margin-bottom: 15px;       /* same spacing as inputs */
+    box-sizing: border-box;
 }
 
 .modal-buttons{
@@ -294,11 +316,185 @@ button.remove-btn {
         font-size: 20px;
     }
 
+    
+
     .total-section{
-        grid-template-columns: 7fr 2fr 30px; /*shrink last column*/
+        grid-template-columns: 7fr 3fr; /*shrink last column*/
         font-size: 18px;
+    }
+
+    .delivery-right{
+      padding-left: 15px;
     }
     .order-btn {
         font-size: 18px;
     }
+}
+
+@media(max-width: 600px){
+    main{
+        padding: 10px 10px;
+    }
+    #to-order h2{
+        font-size: 28px;
+        padding-top: 60px;
+        padding-bottom: 15px;
+    }
+
+    .order-row-header, .order-row{
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        font-size: 16px;
+        gap: 6px;
+    }
+
+    .delivery-or-takeout {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .delivery-left {
+        flex-direction: column; /* stack items vertically */
+        align-items: flex-start; /* align left */
+        gap: 8px;
+    }
+
+    .delivery-left strong {
+        width: 100%;  
+        margin-bottom: 5px;  /* spacing under header */
+    }
+
+    .delivery-left label {
+      display: block;     /* stacked display */
+      margin-left: 10px;  /* indentation */
+      font-size: clamp(12px, 2vw, 16px);
+  }
+
+    .delivery-left input[type="radio"] {
+      transform: scale(1);      /* reset */
+      width: auto;
+      height: auto;
+  }
+  .delivery-left label {
+      width: 100%;
+  }
+  .total-section {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .total-section strong,
+    #order-total-amount {
+        flex: 1 1 45%; /* two-column flexible */
+        padding-left: 0;
+    }
+  
+
+}
+
+/* For max-width: 400px */
+@media (max-width: 400px) {
+  #to-order{
+    padding: 10px 10px;
+  }
+
+  #to-order h2 {
+    font-size: 22px;
+    padding: 40px 0 10px 0;
+  }
+
+  .order-row-header{
+    display: none;
+  }
+  .order-row {
+    grid-template-columns: 2fr 1fr; /* stack everything vertically */
+    font-size: 14px;
+    padding-left: 20px; /* shift content to the right */
+  }
+
+   .order-row div:nth-child(3)
+   {
+    display: none; /* hide total & remove button for compact view */
+    }
+
+  .order-qty input {
+    width: 40px;
+    font-size: 14px;
+  }
+
+  .delivery-or-takeout {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 14px;
+  }
+
+  .delivery-left {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+
+    .delivery-left label {
+        margin-left: 10px;
+    }
+
+ .total-section {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .total-section strong,
+    #order-total-amount {
+        flex: 1 1 100%;
+        width: 100%;
+        text-align: left;
+        padding-left: 0;
+    }
+
+  .order-btn {
+    font-size: 15px;
+    padding: 8px 12px;
+    width: 100%;
+  }
+
+  .modal-content {
+    width: 95%;
+    max-width: 280px;
+  }
+
+  .modal-content h3 {
+    font-size: 20px;
+  }
+
+  .modal-content input {
+    font-size: 16px;
+  }
+
+  .order-btnbox {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    margin: 10px 0;              /* no auto centering */
+    width: 100%;                 /* container spans full width */
+  }
+  .order-btn {
+    display: inline-block;       /* keep natural size */
+    text-align: center;     
+    font-size: 14px;
+    padding:8px 12px;
+    width: auto;
+  }
+}
+
+.order-confirmation{
+  text-align: center;
+  font-size: 30px;
+  color: #013E3F;
+  margin: 50px auto;
+  font-weight: bold;
+  font-style: oblique;
 }

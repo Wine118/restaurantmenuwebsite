@@ -1,4 +1,8 @@
 @import url("media-query.css");
+html {
+  scroll-behavior: smooth;
+}
+
 
 /* Index.html(Main) Page CSS */
 body{
