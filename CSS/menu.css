@@ -1,4 +1,11 @@
 /* menu.html css */
+main {
+    min-height: calc(90vh - 100px); 
+    /* Adjust 140px depending on your header + footer total height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  /* center vertically */
+}
 
 .category-menu {
 margin: 30px auto;
@@ -374,6 +381,10 @@ transform: scale(1.1);
 }
 
 @media (max-width: 600px) { 
+        main{
+            padding-top: 3%;
+            
+        }
         /* Header */
         header {
         flex-direction: column;
