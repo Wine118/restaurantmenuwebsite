@@ -22,3 +22,30 @@ function changeImage() {
 }
 
 setInterval(changeImage, 3000); // Change every 3 seconds
+
+// Special menu is adding to the cart system
+
+const specialItem = {
+    name : "ကြက်ကုန်းဘောင်",
+    price: 6000,
+    qty: 1
+};
+
+document.querySelector("#special-btn").addEventListener("click", () => {
+
+    let cart = JSON.parse(localStorage.getItem("cartItems")) || [];
+
+    // Check if special item already add -> increase qty
+    let item = cart.find(i => i.name === specialItem.name);
+
+    if(item) {
+        item.qty += 1;
+    }else{
+        cart.push(specialItem);
+    }
+    localStorage.setItem("cartItems", JSON.stringify(cart));
+
+    // Go to menu page to show cart
+    window.location.href = "menu.html#to-order";
+
+});
