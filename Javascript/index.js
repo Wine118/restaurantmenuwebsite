@@ -24,7 +24,23 @@ function changeImage() {
 setInterval(changeImage, 3000); // Change every 3 seconds
 
 // Special menu is adding to the cart system
+const multiSelectDishes = [
+  "Nanpyar",
+  "Parata",
+  "Youtiao",
+  "Keema",
+  "Mohinga",
+  "Ohn Noh Kauk Swe",
+  "Mont Tee Thoke",
+  "Kat Kyay Kite",
+  "Dumpling",
+  "Shan",
+  "Tofu Nway",
+  "Mee Shay",
+  "Myay Oh Mee Shay",
+  "Tom Yum Soup"
 
+];
 const specialItem = {
     name : "ကြက်ကုန်းဘောင်",
     price: 6000,
@@ -35,17 +51,33 @@ document.querySelector("#special-btn").addEventListener("click", () => {
 
     let cart = JSON.parse(localStorage.getItem("cartItems")) || [];
 
-    // Check if special item already add -> increase qty
-    let item = cart.find(i => i.name === specialItem.name);
-
-    if(item) {
-        item.qty += 1;
+    if(multiSelectDishes.includes(specialItem.name)){
+        window.location.href = `menu.html#category-menu#?item=${specialItem.name}`;
     }else{
-        cart.push(specialItem);
-    }
-    localStorage.setItem("cartItems", JSON.stringify(cart));
+        // Check if special item already add -> increase qty
+        let item = cart.find(i => i.name === specialItem.name);
 
-    // Go to menu page to show cart
-    window.location.href = "menu.html#to-order";
+        if(item) {
+            item.qty += 1;
+        }else{
+            cart.push(specialItem);
+        }
+        localStorage.setItem("cartItems", JSON.stringify(cart));
+
+        if (localStorage.getItem("cartItems")) {
+        console.log("cartItems is in localStorage!");
+        } else {
+        console.log("No cartItems found.");
+        }
+
+        const cartItems = JSON.parse(localStorage.getItem("cartItems"));
+        console.log(cartItems);
+
+
+        // Go to menu page to show cart
+        window.location.href = "menu.html#to-order";
+    }
+
+    
 
 });

@@ -142,61 +142,65 @@ function addMohinga() {
 
 // ORDER SYSTEM
 
-let order = {}; //Store items by name
-let total = 0; 
-function addItem(dishName, price){
-    if(order[dishName]){
-        //Item exists -> increase quantity
-        order[dishName].quantity += 1;
-    } else {
-        // New item
-        order[dishName] = {
-            price: price,
-            quantity: 1
-        };
-    }
 
+
+function addItem(dishName, price){
+    let cart =getCart();
+    let item = cart.find(i => i.name === dishName);
+    if(item){
+        item.qty += 1;
+    } else {
+        cart.push({
+            name: dishName,
+            price: price,
+            qty: 1
+        });
+    }
+    saveCart(cart);
     updateOrderList();        
 }
 
 function updateOrderList() {
     const orderList = document.getElementById("order-list");
-    const msg = document.getElementById("empty-message");
+    const emptymsg = document.getElementById("empty-message");
     const totalAmount = document.getElementById("total-amount");
 
+    const cart = getCart();
     orderList.innerHTML = "";
-    total = 0;
-
-    const itemNames = Object.keys(order);
-    if(itemNames.length === 0){
-        msg.style.display = "block";
+    
+    let total = 0;
+    
+    if(cart.length === 0){
+        emptymsg.style.display = "block";
         totalAmount.textContent = "0 MMK";
         orderList.style.display = "none";
-        order = {};
         total = 0;
         return;
     }else{
-        msg.style.display = "none";
+        emptymsg.style.display = "none";
         orderList.style.display = "flex";
     }
+        
     
-    itemNames.forEach(name => {
-        const item = order[name];
-        const rowTotal = item.price * item.quantity;
+    
+    
+    
+    cart.forEach((item, index) => {
+        const rowTotal = item.price * item.qty;
         total += rowTotal;
 
         orderList.innerHTML += `
             <div class="order-row">
 
                 <div class="order-name">
-                    ${name}
+                    ${item.name}
                 </div>
 
                 <div class="order-qty">
                     <input type="number"
-                     value="${item.quantity}"
+                     value="${item.qty}"
                       min="1"
-                      onchange = "changeQty('${name}',this.value)"
+                      onchange = "changeQty('${index}',this.value)"
                       >
                 </div>
 
@@ -208,7 +212,7 @@ function updateOrderList() {
                     ${rowTotal} MMK
                 </div>
 
-                <button class="remove-btn" onclick="removeItem('${name}')">x</button>
+                <button class="remove-btn" onclick="removeItem('${index}')">x</button>
 
         </div>
         `;
@@ -218,18 +222,67 @@ function updateOrderList() {
     
 }
 
-function changeQty(dishName, newQty){
+function changeQty(index, newQty){
+    let cart = getCart();
     newQty = parseInt(newQty);
     if(newQty <= 0) newQty = 1;
 
-    order[dishName].quantity = newQty;
+    cart[index].qty = newQty;
+    saveCart(cart);
     updateOrderList();
 }
 
-function removeItem(name){
-    delete order[name];
+function removeItem(index){
+    let cart = getCart();
+    cart.splice(index, 1);
+    saveCart(cart);
     updateOrderList();
 }
 
+function getCart() {
+    return JSON.parse(localStorage.getItem("cartItems")) || [];
+}
+
+function saveCart(cart) {
+    
+    localStorage.setItem("cartItems", JSON.stringify(cart));
+
+}
+
+if (localStorage.getItem("cartItems")) {
+    console.log("cartItems is in localStorage!");
+} else {
+    console.log("No cartItems found.");
+}
+
+const cartItems = JSON.parse(localStorage.getItem("cartItems"));
+console.log(cartItems);
+
+window.addEventListener("DOMContentLoaded", () => {
+    const hash= window.location.hash;
+    if(!hash) return;
+
+    // #MohinaAndNoodle?itemMohinga
+    const [sectionId, query] = hash.substring(1).split("?");
+
+    // Scroll to section(browser already does this)
+    if(query){
+        const params = new URLSearchParams(query);
+        const itemId = params.get("item");
+
+        if(itemId) {
+            setTimeout(()=>{
+                const itemElement = document.getElementById(itemId);
+                if(itemElement){
+                    itemElement.scrollIntoView({
+                        behavior: "smooth",
+                        block:"center"
+                    });
+
+                }
+            },300);
+        }
+    }
+});
 
 document.addEventListener("DOMContentLoaded", updateOrderList);
