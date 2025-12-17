@@ -70,7 +70,7 @@
         <div class="delivery-left">
             <strong>Delivery or Takeout:</strong>
             <label><input type="radio" name="deliverytype" value="delivery"> Delivery (+1000 MMK)</label>
-            <label><input type="radio" name="deliverytype" value="takeout"> Takeout (0 MMK)</label>
+            <label><input type="radio" name="deliverytype" value="takeout" checked> Takeout (0 MMK)</label>
         </div>
         
         
@@ -86,6 +86,17 @@
     </div>
 
     <div class="order-btnbox">
+      <div id="infosection">
+        <label for="nameInput">Name:</label>
+        <input type="text" id="nameInput" placeholder="Enter name..." maxlength="50">
+        <label for="phoneInput">Phone: </label>
+        <input type="tel" id="phoneInput" placeholder="Enter phone number" maxlength="11">
+        <div id="addressbar">
+          <label for="addressInput" >Address: </label>  
+          <textarea id="addressInput" placeholder="Enter address(only for delivery)"></textarea> 
+        </div>
+             
+      </div>
       <button id="openAmountModal" class="order-btn">Order Now</button>
     </div>
    </section> 
@@ -95,9 +106,6 @@
       <div class="modal-content">
         <h3>Enter Amount to Pay</h3>
         <input type="number" id="amountInput" placeholder="Enter amount..." min="0">
-        <input type="text" id="nameInput" placeholder="Enter name..." maxlength="50">
-        <input type="tel" id="phoneInput" placeholder="Enter phone number" maxlength="11">
-        <textarea id="addressInput" placeholder="Enter address(only for delivery)"></textarea>
 
         <div class="modal-buttons">
           <button id="confirmAmount" class="confirm-btn">Confirm</button>
